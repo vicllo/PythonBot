@@ -8,12 +8,15 @@ Python script running bot Contains 3 main commands
 
 !python : begins the python executing process. Just type this command, send the message, wait for the bot waiting message, then write your code in the next message. You can write it blank, or use the Discord python code markdown with :
 
-```python
+\`\`\`python
 
 your code
 
-```
+\`\`\`
 
 The bot will answer with the python output of your program
 
 Please note that the input() command will not work for the moment.
+
+
+Please do not run the bot on your own ! Please use https://top.gg/bot/689934968285298808 instead
