@@ -31,16 +31,8 @@ async def on_ready():
 async def on_member_join(member):
     channel = member.guild.system_channel
     serveur = member.guild.id
-    print(channel,serveur)
-    if serveur == 682539277330284585:
-        if channel is not None:
-            await channel.send('Bienvenue sur le serveur général {0.mention}, merci d\'écrire ici ton prénom, nom ainsi que ta classe afin que tu sois assigné(e) à ta classe.'.format(member))
-    elif serveur == 707200285436805141:
-        if channel is not None:
-            await channel.send('Bienvenue sur le serveur des 2nde {0.mention}, merci d\'écrire ici ton prénom, nom ainsi que ta classe afin que tu sois assigné(e) à ta classe.'.format(member))
-    else:
-        if channel is not None:
-            await channel.send('Welcome in the server {0.mention}.'.format(member))
+    if channel is not None:
+        await channel.send('Welcome in the server {0.mention}.'.format(member))
 
 #commande test
 @bot.command()
@@ -96,24 +88,15 @@ async def on_raw_reaction_add(payload):
         if payload.emoji.name == constants.emotrash:
             await messageReaction.delete()
 
-
-#LOGS 
+ 
 @bot.event
 async def on_message(ctx):
 
     servernb = str(len(bot.guilds))
     await bot.change_presence(status=discord.Status.online, activity=discord.Game("serving "+servernb+" servers"))
 
-    
-    serv = bot.get_guild(709826568016625745)
-    canal = serv.get_channel(709826568016625748)
-    if ctx.channel.id != 709826568016625748:
-        await canal.send(str("**"+ctx.author.name)+"** ("+str(ctx.guild)+" - "+str(ctx.channel)+") : "+str(ctx.content)+"\n")
-
-    await bot.process_commands(ctx)
 
 
-print("Let's go")
 load_dotenv()
 token = os.getenv('TOKEN')
 
