@@ -1,6 +1,7 @@
 # PythonBot
 
-Python script running bot Contains 3 main commands
+Python script running bot 
+Contains 3 main commands
 
 !help : display help with the commands
 
