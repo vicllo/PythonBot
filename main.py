@@ -71,12 +71,12 @@ async def python(ctx):
     if not retour_txt.startswith("signal: Killed"):
         retour_txt = retour_txt[17:]
     else:
-        retour_txt = "Your program is to slow"
+        retour_txt = "Your program is too slow"
     try:
         message = await ctx.send("```python\n"+retour_txt+"```")
     except discord.errors.HTTPException:
         with open("retour.txt", "r") as output_file:
-            message = await ctx.send("```Your program output is more than 2000 caracters.Please consider shorting it.```", file=discord.File(output_file,filename=datetime.now().strftime("%d %b %Y. %H:%M:%S.txt")))
+            message = await ctx.send("```The output is more than 2000 caracters. Please consider shorting it.```", file=discord.File(output_file,filename=datetime.now().strftime("%d %b %Y. %H:%M:%S.txt")))
     await message.add_reaction(constants.emotrash)
 
 
