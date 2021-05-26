@@ -76,7 +76,7 @@ async def python(ctx):
         message = await ctx.send("```python\n"+retour_txt+"```")
     except discord.errors.HTTPException:
         with open("retour.txt", "r") as output_file:
-            message = await ctx.send("```The output is more than 2000 caracters. Please consider shorting it.```", file=discord.File(output_file,filename=datetime.now().strftime("%d %b %Y. %H:%M:%S.txt")))
+            message = await ctx.send("```The output is more than 2000 characters. Please consider shorting it.```", file=discord.File(output_file,filename=datetime.now().strftime("%d %b %Y. %H:%M:%S.txt")))
     await message.add_reaction(constants.emotrash)
 
 
